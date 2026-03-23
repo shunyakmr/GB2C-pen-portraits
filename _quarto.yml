@@ -1,0 +1,11 @@
+project:
+  title: "Pen Portraits: Gambling Behaviour Classification"
+  output-dir: _output
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+    number-sections: true
+    smooth-scroll: true
