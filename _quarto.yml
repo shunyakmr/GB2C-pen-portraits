@@ -1,6 +1,7 @@
 project:
+  type: website
   title: "Pen Portraits: Gambling Behaviour Classification"
-  output-dir: _output
+  output-dir: docs
 
 format:
   html:
