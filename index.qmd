@@ -16,16 +16,12 @@ format:
 
 This supplementary material accompanies the main paper and provides detailed pen portraits for each of the 13 Subgroups identified through the hierarchical classification of online gambling behaviour. The classification comprises three Supergroups --- Active Gamblers, Dormant Gamblers and Others --- which are further divided into Groups and Subgroups based on behavioural, demographic and geodemographic characteristics. Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Subgroup, facilitating comparison across the classification.
 
-@fig-subgroup-tree presents a tree diagram illustrating the three hierarchical levels of Supergroups, Groups (Betting & Gaming, Betting-Exclusive and Gaming-Exclusive) and Subgroups (BG1--6, B1--2 and G1--3). The detailed Subgroup profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Subgroup are provided via the Geographic Data Service (GeoDS).
-
-*Click on any segment in the figure below to jump to its description.*
-
 ## Glossary of Terms {#sec-glossary}
 
 The following definitions apply throughout this document:
 
 | Term | Definition |
-|:-----|:-----------|
+|:-----------------------|:----------------------------------------------|
 | **Genuine Gamblers** | Individuals who hold a verified online account, who participated in at least one form of gambling using money (as opposed to free or demo modes) and made deposits on multiple days within a year. |
 | **Active Gamblers** | Genuine Gamblers who meet the criteria for sustained gambling activity, including gambling at least once a month on average and maintaining an account tenure of over three months. |
 | **Dormant Gamblers** | Genuine Gamblers who do not meet the additional criteria for Active Gamblers. |
@@ -38,6 +34,8 @@ The following definitions apply throughout this document:
 | **Multiple bets / multiple games** | Instances where a gambler bets on more than one activity within a single bet slip (betting) or session (gaming). |
 
 ## Classification Overview
+
+@fig-subgroup-tree presents a tree diagram illustrating the three hierarchical levels of Supergroups, Groups (Betting & Gaming, Betting-Exclusive and Gaming-Exclusive) and Subgroups (BG1--6, B1--2 and G1--3). The detailed Subgroup profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Subgroup are provided via the Geographic Data Service (GeoDS). *Click on any segment in the figure to jump to its description.*
 
 ```{r}
 #| label: setup
@@ -277,6 +275,12 @@ make_treemap <- function(highlight = NULL, clickable = FALSE, height = 500) {
 
 make_treemap(clickable = TRUE, height = 520)
 ```
+
+The classification identifies three Supergroups --- Active Gamblers, Dormant Gamblers and Others --- with Active Gamblers further divided into three Groups and eleven Subgroups:
+
+-   **Betting & Gaming (BG):** [BG1: Engaged New-Age Gamblers](#sec-bg1), [BG2: Newcomers with Sporadic and Moderate Patterns of Play](#sec-bg2), [BG3: Event-Driven Speculative Players](#sec-bg3), [BG4: Mindful Entertainment Seekers](#sec-bg4), [BG5: High-Frequency High-Stake Losers](#sec-bg5), [BG6: Young Occasional Binge Players](#sec-bg6)
+-   **Betting-Exclusive (B):** [B1: Longstanding Habitual Veterans](#sec-b1), [B2: Well-Resourced Hobbyists](#sec-b2)
+-   **Gaming-Exclusive (G):** [G1: Episodic High Risk Takers](#sec-g1), [G2: Mindful Low-Rollers from Deprived Communities](#sec-g2), [G3: High-Stakes Gamers from Deprived Communities](#sec-g3)
 
 ## Active Gamblers {#sec-active}
 
