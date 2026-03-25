@@ -35,7 +35,7 @@ The following definitions apply throughout this document:
 
 ## Classification Overview
 
-@fig-subgroup-tree presents a tree diagram illustrating the three hierarchical levels of Supergroups, Groups and Subgroups. The detailed Subgroup profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Subgroup are provided via the Geographic Data Service (GeoDS).
+@fig-subgroup-tree presents a tree diagram illustrating the three hierarchical levels of Supergroups, Groups and Subgroups. The detailed Subgroup profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Subgroup are provided via the Geographic Data Service (GeoDS). @tbl-subgroups lists the 11 Active Gambler Subgroups organised by Group, with links to each pen portrait.
 
 | Group | Code | Subgroup Name |
 |:------|:-----|:--------------|
