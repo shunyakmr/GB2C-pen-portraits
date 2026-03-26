@@ -2,9 +2,12 @@
 title: "Supplementary Material: Integrative Pen Portraits"
 subtitle: "A 13-fold Classification of Online Gambling Behaviours in Great Britain"
 author:
-  - name: "Dr Shunya Kimura"
+  - name: "Dr. Shunya Kimura"
     email: "s.kimura@liverpool.ac.uk"
+  - name: "Prof. Paul Longley"
+    email: "p.longley@ucl.ac.uk"
 date: "March 2026"
+date-modified: "2026-03-26"
 format:
   html:
     toc: true
