@@ -1,13 +1,13 @@
 ---
 title: "Supplementary Material: Integrative Pen Portraits"
-subtitle: "A 13-fold Classification of Online Gambling Behaviours in Great Britain"
+subtitle: "A 12-Type Classification of Online Gambling Behaviours in Great Britain"
 author:
   - name: "Dr. Shunya Kimura"
     email: "s.kimura@liverpool.ac.uk"
   - name: "Prof. Paul Longley"
     email: "p.longley@ucl.ac.uk"
 date: "March 2026"
-date-modified: "2026-03-26"
+date-modified: "2026-04-20"
 format:
   html:
     toc: true
@@ -17,7 +17,7 @@ format:
 
 ## Introduction
 
-This supplementary material accompanies the main paper and provides detailed pen portraits for each of the 13 Subgroups identified through the hierarchical classification of online gambling behaviour. The classification comprises three Supergroups --- Active Gamblers, Dormant Gamblers and Others --- which are further divided into Groups and Subgroups based on behavioural, demographic and geodemographic characteristics. Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Subgroup, facilitating comparison across the classification.
+This supplementary material accompanies the main paper and provides detailed pen portraits for each of the 12 behavioural Types, plus a residual Others category at the neighbourhood level. The 11 active Types are organised into three activity Groups --- Betting-and-Gaming (BG), Betting-Exclusive (B) and Gaming-Exclusive (G) --- alongside a Dormant Type. Others comprises the remaining adult population and is estimated only at LSOA level. Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Type, facilitating comparison across the classification.
 
 ## Glossary of Terms {#sec-glossary}
 
@@ -38,7 +38,7 @@ The following definitions apply throughout this document:
 
 ## Classification Overview
 
-@fig-subgroup-tree presents a tree diagram illustrating the three hierarchical levels of Supergroups, Groups and Subgroups. The detailed Subgroup profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Subgroup are provided via the Geographic Data Service (GeoDS).
+@fig-subgroup-tree presents a tree diagram illustrating the two hierarchical levels: activity Groups (BG, B, G) and the 12 Types. The detailed Type profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Type are provided via the Geographic Data Service (GeoDS).
 
 *Click on any segment in @fig-subgroup-tree to jump to its description.*
 
@@ -273,7 +273,7 @@ make_treemap <- function(highlight = NULL, clickable = FALSE, height = 500) {
 
 ```{r}
 #| label: fig-subgroup-tree
-#| fig-cap: "Hierarchical representation of 13 Gambling Behaviours within Supergroups Active, Dormant and Others. Click any segment to navigate to its description."
+#| fig-cap: "Hierarchical representation of the 12 Types, organised by activity Group, alongside the Others residual. Click any segment to navigate to its description."
 #| echo: false
 #| message: false
 #| warning: false
@@ -281,9 +281,9 @@ make_treemap <- function(highlight = NULL, clickable = FALSE, height = 500) {
 make_treemap(clickable = TRUE, height = 520)
 ```
 
-@tbl-subgroups lists the 11 Active Gambler Subgroups organised by Group, with links to each pen portrait.
+@tbl-subgroups lists the 11 active Types organised by Group, with links to each pen portrait.
 
-| Group | Code | Subgroup Name |
+| Group | Code | Type Name |
 |:-----------------|:-----------------|:------------------------------------|
 | Betting & Gaming | BG1 | [Engaged New-Age Gamblers](#sec-bg1) |
 |  | BG2 | [Newcomers with Sporadic and Moderate Patterns of Play](#sec-bg2) |
@@ -297,7 +297,7 @@ make_treemap(clickable = TRUE, height = 520)
 |  | G2 | [Mindful Low-Rollers from Deprived Communities](#sec-g2) |
 |  | G3 | [High-Stakes Gamers from Deprived Communities](#sec-g3) |
 
-: Active Gambler Subgroups {#tbl-subgroups}
+: Active Gambler Types {#tbl-subgroups}
 
 ## Active Gamblers {#sec-active}
 
@@ -313,27 +313,27 @@ make_treemap(clickable = TRUE, height = 520)
 make_treemap(highlight = "bg", height = 380)
 ```
 
-Comprising the largest share within the Active Gamblers, Group BG includes individuals who actively participate in both betting and gaming. BG Subgroups display substantial diversity in gambling behaviours: for instance, Subgroups BG4 and BG5 share similar high-frequency play patterns but very different intensities of play and profitability, while BG1 and BG3 have contrasting inclinations towards betting or gaming.
+Comprising the largest share within the Active Gamblers, Group BG includes individuals who actively participate in both betting and gaming. BG Types display substantial diversity in gambling behaviours: for instance, Types BG4 and BG5 share similar high-frequency play patterns but very different intensities of play and profitability, while BG1 and BG3 have contrasting inclinations towards betting or gaming.
 
-Demographically, Group BG is also heterogeneous. Some Subgroups, such as BG2, have higher-than-average female participation, while BG6 remains overwhelmingly male. Despite these differences, members' living conditions and lifestyles are similar, generally mirroring the broader Supergroup pattern. However, there are also subtle variations in socio-economic associations: BG1, BG4 and BG5 are more strongly associated with neighbourhood deprivation, while BG2, BG3 and BG6 are not.
+Demographically, Group BG is also heterogeneous. Some Types, such as BG2, have higher-than-average female participation, while BG6 remains overwhelmingly male. Despite these differences, members' living conditions and lifestyles are similar, generally mirroring the broader Active Gambler pattern. However, there are also subtle variations in socio-economic associations: BG1, BG4 and BG5 are more strongly associated with neighbourhood deprivation, while BG2, BG3 and BG6 are not.
 
 #### BG1: Engaged New-Age Gamblers {#sec-bg1}
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg1&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Participants are heavily engaged in both frequency and intensity of play, gambling on 166 days per annum (45.5% of all days) with minimal seasonal fluctuation. This activity is evenly distributed throughout the year, indicating a sustained and broad-based interest in gambling. Daily average stakes are 2.4 times the Supergroup average, typically placed during one or two 20-minute gaming sessions with stakes 30% higher than the Supergroup Average, or three to four bets with low stakes and long odds. Participants accrue net wins on approximately one-third of gambling days, in line with the Active Gambler Supergroup average. However, typical monthly losses are more than three times the Supergroup average, reflecting substantial financial exposure associated with patterns of high-frequency, high-intensity gambling behaviour.
+Participants are heavily engaged in both frequency and intensity of play, gambling on 166 days per annum (45.5% of all days) with minimal seasonal fluctuation. This activity is evenly distributed throughout the year, indicating a sustained and broad-based interest in gambling. Daily average stakes are 2.4 times the Active Gambler average, typically placed during one or two 20-minute gaming sessions with stakes 30% higher than the Active Gambler average, or three to four bets with low stakes and long odds. Participants accrue net wins on approximately one-third of gambling days, in line with the Active Gambler average. However, typical monthly losses are more than three times the Active Gambler average, reflecting substantial financial exposure associated with patterns of high-frequency, high-intensity gambling behaviour.
 
-A defining characteristic is strong preference for newer or niche gambling products. Rather few participants allocate more than 5% of their total stakes to football (13.6%) or horse racing (23.9%) --- the lowest among all Subgroups. In contrast, participation in virtual sports is 1.8 times higher than the Supergroup average; and engagement with slots is common (70.1%). These preferences align with broader shifts in online gambling behaviour since COVID-19, when lock-down restrictions reduced access to physical venues and the effect of suspension of many sporting events was to increase engagement with alternative gambling products. Their average account tenure of approximately two years coincides with this shift to new-age gambling.
+A defining characteristic is strong preference for newer or niche gambling products. Rather few participants allocate more than 5% of their total stakes to football (13.6%) or horse racing (23.9%) --- the lowest among all Types. In contrast, participation in virtual sports is 1.8 times higher than the Active Gambler average; and engagement with slots is common (70.1%). These preferences align with broader shifts in online gambling behaviour since COVID-19, when lock-down restrictions reduced access to physical venues and the effect of suspension of many sporting events was to increase engagement with alternative gambling products. Their average account tenure of approximately two years coincides with this shift to new-age gambling.
 
-Participants also share geodemographic and spatial profiles with Group G, albeit that female representation in this Subgroup is slightly lower (33.5%), and they are even more geographically dispersed across GB neighbourhoods.
+Participants also share geodemographic and spatial profiles with Group G, albeit that female representation in this Type is slightly lower (33.5%), and they are even more geographically dispersed across GB neighbourhoods.
 
 #### BG2: Newcomers with Sporadic and Moderate Patterns of Play {#sec-bg2}
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg2&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Participants in this Subgroup are typically males under 45, with highest participation amongst 18--24-year-olds. Female participation is the highest (36.8%) in the Group. At just under a year, participants have the shortest average account tenure in the Gambling Supergroup. Behaviours are characterised by sporadic gambling (45 days per annum), with intensity as measured by deposit amount and session duration below the Supergroup average. Participants make more cash-out withdrawals relative to deposits than any other Subgroup, indicating finance management. Losses accrue on 53.3% of gambling days --- the lowest rate in the Group. 36% of participants accrue an annual profit, the second highest among all Subgroups.
+Participants in this Type are typically males under 45, with highest participation amongst 18--24-year-olds. Female participation is the highest (36.8%) in the Group. At just under a year, participants have the shortest average account tenure among Active Gamblers. Behaviours are characterised by sporadic gambling (45 days per annum), with intensity as measured by deposit amount and session duration below the Active Gambler average. Participants make more cash-out withdrawals relative to deposits than any other Type, indicating finance management. Losses accrue on 53.3% of gambling days --- the lowest rate in the Group. 36% of participants accrue an annual profit, the second highest among all Types.
 
-Betting activity tends to be event-driven, peaking around major sporting events such as the Cheltenham Festival (March) and Grand National (April). At these times participants stakes are around the Supergroup average --- not high in cash terms but weighty relative to low deposit amounts at other times. Single-fold bets with long odds are common. Less than half of participants allocate more than 5% of their total stakes to betting activities, indicating that even major events are a sideline to moderate patterns of play in gaming rather than betting. Participants engage in diverse gaming formats, including bingo (5.6%) and roulette (14.1%). Gaming session stakes are typically less than half the average of Subgroups BG and G, indicating a more measured approach to gaming than their sporadic, high-risk betting behaviour.
+Betting activity tends to be event-driven, peaking around major sporting events such as the Cheltenham Festival (March) and Grand National (April). At these times participants stakes are around the Active Gambler average --- not high in cash terms but weighty relative to low deposit amounts at other times. Single-fold bets with long odds are common. Less than half of participants allocate more than 5% of their total stakes to betting activities, indicating that even major events are a sideline to moderate patterns of play in gaming rather than betting. Participants engage in diverse gaming formats, including bingo (5.6%) and roulette (14.1%). Gaming session stakes are typically less than half the average of Groups BG and G, indicating a more measured approach to gaming than their sporadic, high-risk betting behaviour.
 
 Despite their focus on gaming rather than betting, the geodemographic profile closely resembles the B Group. Within the BG Group, there is only a weak association with living conditions and lifestyle factors, albeit that this association is slightly stronger than in Group B.
 
@@ -341,9 +341,9 @@ Despite their focus on gaming rather than betting, the geodemographic profile cl
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg3&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Adult males in early to mid-life predominate, and females make up just 16.2% of all participants --- around 10% lower than the Supergroup average. Participants typically gamble on 41 days per annum (11.2% of all days), the lowest within the BG Group, and daily deposits are also below BG Group average, suggesting a controlled and measured approach rather than impulsive or excessive play.
+Adult males in early to mid-life predominate, and females make up just 16.2% of all participants --- around 10% lower than the Active Gambler average. Participants typically gamble on 41 days per annum (11.2% of all days), the lowest within the BG Group, and daily deposits are also below BG Group average, suggesting a controlled and measured approach rather than impulsive or excessive play.
 
-Gambling behaviour is highly and predictably event-driven, with the highest proportion of activity occurring on popular days (42.1%) and weekends (39.7%) within Group BG. Participants are strongly committed to mainstream sports betting categories --- football (80.6%), horse racing (59.3%) and combat sports (7.7%) --- with peak engagement aligned with major events such as English Premier League and Cup football fixtures and the Cheltenham Festival (March). Acca bets are preferred to single-folds, often placed at longer odds per bet slip, suggesting a speculative approach. Participation in gaming activities is the lowest across all BG and G Groups and is typically spread across slots (38.3%), multiple games (36.4%) and jackpot slots (18.1%). Gambling intensity is consistently low and typically confined to brief, single daily sessions averaging just four minutes. 25.9% of individuals achieve a monthly profit, slightly above the Supergroup average.
+Gambling behaviour is highly and predictably event-driven, with the highest proportion of activity occurring on popular days (42.1%) and weekends (39.7%) within Group BG. Participants are strongly committed to mainstream sports betting categories --- football (80.6%), horse racing (59.3%) and combat sports (7.7%) --- with peak engagement aligned with major events such as English Premier League and Cup football fixtures and the Cheltenham Festival (March). Acca bets are preferred to single-folds, often placed at longer odds per bet slip, suggesting a speculative approach. Participation in gaming activities is the lowest across all BG and G Groups and is typically spread across slots (38.3%), multiple games (36.4%) and jackpot slots (18.1%). Gambling intensity is consistently low and typically confined to brief, single daily sessions averaging just four minutes. 25.9% of individuals achieve a monthly profit, slightly above the Active Gambler average.
 
 Geodemographically, participants' neighbourhood profile closely resemble that of Group B, but with particular emphasis upon OAC Group 7b (Young Families in Industrial Towns): areas characterised by young populations, predominantly UK-born, challenged by high unemployment and low educational attainment.
 
@@ -351,27 +351,27 @@ Geodemographically, participants' neighbourhood profile closely resemble that of
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg4&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Participants include many of the most frequent gamblers, actively participating on 203 days per annum (55.5% of all days) at regular intervals. Despite this high frequency, play is sustained by infrequent and modest deposits, typically placing 13 bets before each new deposit. Deposits are approximately half the Supergroup average, and the interval between deposits is more than six times longer. Taken together, this indicates a strategic and mindful approach to maintaining continuous engagement using limited financial resources. Participants record the lowest stake per betting slip or gaming session, indicative of a low-intensity, low-risk approach. Participants also pursue the most diverse range of activities, with an average of nine, of which three are betting and six gaming. Less conventional gaming activities, such as live game shows, are three times more popular than the Groups BG and G average (40.6%). Bets tend to be placed at shorter odds with multiple folds, suggestive of risk management. This conservative yet varied approach turns monthly profits for 39.7% of participants --- the highest rate amongst all Subgroups.
+Participants include many of the most frequent gamblers, actively participating on 203 days per annum (55.5% of all days) at regular intervals. Despite this high frequency, play is sustained by infrequent and modest deposits, typically placing 13 bets before each new deposit. Deposits are approximately half the Active Gambler average, and the interval between deposits is more than six times longer. Taken together, this indicates a strategic and mindful approach to maintaining continuous engagement using limited financial resources. Participants record the lowest stake per betting slip or gaming session, indicative of a low-intensity, low-risk approach. Participants also pursue the most diverse range of activities, with an average of nine, of which three are betting and six gaming. Less conventional gaming activities, such as live game shows, are three times more popular than the Groups BG and G average (40.6%). Bets tend to be placed at shorter odds with multiple folds, suggestive of risk management. This conservative yet varied approach turns monthly profits for 39.7% of participants --- the highest rate amongst all Types.
 
-The geodemographic composition mirrors the Supergroup average. Males aged 18--24 and 40--44 are marginally over-represented, whereas the female proportion is slightly lower (17.9%) than the Supergroup average. The geographic distribution shows the strongest spatial autocorrelation, with pronounced cold-spots occurring across southern England. Geodemographically, OAC Group 8a (Routine Occupations or Retirement) is very prevalent --- characterised by high population densities, high unemployment rates, employment dominated by routine occupations, low incidence of higher education attainment and prevalent health challenges. There is a moderately stronger association with higher neighbourhood deprivation compared to the Supergroup average.
+The geodemographic composition mirrors the Active Gambler average. Males aged 18--24 and 40--44 are marginally over-represented, whereas the female proportion is slightly lower (17.9%) than the Active Gambler average. The geographic distribution shows the strongest spatial autocorrelation, with pronounced cold-spots occurring across southern England. Geodemographically, OAC Group 8a (Routine Occupations or Retirement) is very prevalent --- characterised by high population densities, high unemployment rates, employment dominated by routine occupations, low incidence of higher education attainment and prevalent health challenges. There is a moderately stronger association with higher neighbourhood deprivation compared to the Active Gambler average.
 
 #### BG5: High-Frequency High-Stake Losers {#sec-bg5}
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg5&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Participation is high frequency, high intensity, taking place on 209 days per annum (57.3% of all days) at regular intervals, of which just 27.7% fall on popular days --- the lowest within the BG Group. Other gambling days are dispersed throughout the year. Unlike participants in Subgroup BG4, who gamble on a similar number of days, frequent deposits are made, typically 18 times a month --- the highest in the Supergroup. Daily deposits are not the highest amongst all Subgroups, they are 1.8 times the Supergroup average totals, and the sheer frequency of deposits requires median monthly deposits that are 5.7 times the Supergroup average. The substantial investment of both time and money results in this Subgroup having the lowest proportion of participants turning a profit (10.1%), while average monthly loss amounts are six times higher than the Supergroup average. Despite these adverse outcomes, participants are the most established cohort within the BG Group, with typical registration periods exceeding three years.
+Participation is high frequency, high intensity, taking place on 209 days per annum (57.3% of all days) at regular intervals, of which just 27.7% fall on popular days --- the lowest within the BG Group. Other gambling days are dispersed throughout the year. Unlike participants in Type BG4, who gamble on a similar number of days, frequent deposits are made, typically 18 times a month --- the highest among Active Gamblers. Daily deposits are not the highest amongst all Types, they are 1.8 times the Active Gambler average totals, and the sheer frequency of deposits requires median monthly deposits that are 5.7 times the Active Gambler average. The substantial investment of both time and money results in this Type having the lowest proportion of participants turning a profit (10.1%), while average monthly loss amounts are six times higher than the Active Gambler average. Despite these adverse outcomes, participants are the most established cohort within the BG Group, with typical registration periods exceeding three years.
 
-Demographically, this Subgroup closely resembles the typical Gambler, with a slight under-representation of males aged 18--24 and a slight over-representation of males aged 35--44. The female proportion is lower (16.5%) than the Supergroup average. Geodemographically, members exhibit the strongest association with high neighbourhood deprivation within the BG Group.
+Demographically, this Type closely resembles the typical Gambler, with a slight under-representation of males aged 18--24 and a slight over-representation of males aged 35--44. The female proportion is lower (16.5%) than the Active Gambler average. Geodemographically, members exhibit the strongest association with high neighbourhood deprivation within the BG Group.
 
 #### BG6: Young Occasional Binge Players {#sec-bg6}
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=bg6&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-These predominantly young adult males are predominantly drawn from the 18--39 Cohort, peaking between ages 30--34. Female representation is the lowest within the BG Group (14.5%). Frequency of play is below the Supergroup average, typically participating 50 days per annum (13.4% of all days). Engagement is infrequent but interspersed with bursts of intense activity. Activity aligns closely with major sporting events, particularly on Saturdays in the football season, and a pronounced decline out of season in June and July. A pronounced surge occurs for the Grand National (early April). The substantial commitment to betting on football (40.1% of participants) is not mirrored by horse racing (21.7% of participants), which is below the Supergroup average. There is strong commitment to gaming activities, such as slots (64.4% of participants) and multiple games (79.5%). These patterns suggest susceptibility to event-driven marketing and cross-selling, where individuals initially drawn to major sports events transition towards unrelated gaming products.
+These predominantly young adult males are predominantly drawn from the 18--39 Cohort, peaking between ages 30--34. Female representation is the lowest within the BG Group (14.5%). Frequency of play is below the Active Gambler average, typically participating 50 days per annum (13.4% of all days). Engagement is infrequent but interspersed with bursts of intense activity. Activity aligns closely with major sporting events, particularly on Saturdays in the football season, and a pronounced decline out of season in June and July. A pronounced surge occurs for the Grand National (early April). The substantial commitment to betting on football (40.1% of participants) is not mirrored by horse racing (21.7% of participants), which is below the Active Gambler average. There is strong commitment to gaming activities, such as slots (64.4% of participants) and multiple games (79.5%). These patterns suggest susceptibility to event-driven marketing and cross-selling, where individuals initially drawn to major sports events transition towards unrelated gaming products.
 
-Although gambling frequency is low, intensity of play is amongst the highest within the BG Group. On active gambling days, members typically place some of the largest stakes within the Group, evenly distributed across betting and gaming activities. Gaming sessions are prolonged, averaging 20 minutes per session --- among the longest in the Group. 21.3% of gaming sessions occur late-night, the highest proportion across all Subgroups, consistent with a pattern of binge-gambling. Betting is predominantly structured around accumulator bets (60.9%), with potential returns 1.3 times higher than the Supergroup average, suggesting a preference for high-risk, high-reward wagers. Participants incur losses on 73.3% of gambling days, the highest proportion within the Group. 17.1% of participants nevertheless turn a monthly profit, indicating that while frequent losses are common, there are some benefits from the volatility inherent in this gambling style.
+Although gambling frequency is low, intensity of play is amongst the highest within the BG Group. On active gambling days, members typically place some of the largest stakes within the Group, evenly distributed across betting and gaming activities. Gaming sessions are prolonged, averaging 20 minutes per session --- among the longest in the Group. 21.3% of gaming sessions occur late-night, the highest proportion across all Types, consistent with a pattern of binge-gambling. Betting is predominantly structured around accumulator bets (60.9%), with potential returns 1.3 times higher than the Active Gambler average, suggesting a preference for high-risk, high-reward wagers. Participants incur losses on 73.3% of gambling days, the highest proportion within the Group. 17.1% of participants nevertheless turn a monthly profit, indicating that while frequent losses are common, there are some benefits from the volatility inherent in this gambling style.
 
-Geodemographically, participants closely resemble the Supergroup average but are slightly less prevalent in the most deprived areas.
+Geodemographically, participants closely resemble the Active Gambler average but are slightly less prevalent in the most deprived areas.
 
 ### B: Betting-Exclusive Participants {#sec-betting}
 
@@ -385,7 +385,7 @@ Geodemographically, participants closely resemble the Supergroup average but are
 make_treemap(highlight = "b", height = 380)
 ```
 
-This group consists of gamblers who engage exclusively in betting activities. With a median tenure of approximately 3.4 years, they represent the most established customers across the Subgroups. Their demographic profile is predominantly male and includes the oldest participants. While gambling behaviours within the group vary in terms of frequency, intensity and variability, their risk-taking approach remains relatively consistent. Members employ similar betting strategies, balancing a mix of bet slip types with a slight preference for single-fold bets over accumulators. Despite their sustained participation, their overall gambling outcomes are the worst across the groups, with an average of 73.1% of betting days resulting in losses, suggesting that winning may not be their primary motivation. Geodemographically, this Subgroup is the most diverse and shows the weakest association with socio-economic hardship among all Subgroups, reflecting a broad and varied customer base.
+This group consists of gamblers who engage exclusively in betting activities. With a median tenure of approximately 3.4 years, they represent the most established customers across the Types. Their demographic profile is predominantly male and includes the oldest participants. While gambling behaviours within the group vary in terms of frequency, intensity and variability, their risk-taking approach remains relatively consistent. Members employ similar betting strategies, balancing a mix of bet slip types with a slight preference for single-fold bets over accumulators. Despite their sustained participation, their overall gambling outcomes are the worst across the groups, with an average of 73.1% of betting days resulting in losses, suggesting that winning may not be their primary motivation. Geodemographically, this Group is the most diverse and shows the weakest association with socio-economic hardship among all Types, reflecting a broad and varied customer base.
 
 There are distinct clusters in Scotland, particularly on the outskirts of Glasgow and Edinburgh, with concentrations extending into rural areas of Southern Scotland and coastal cities such as Dundee and Aberdeen.
 
@@ -393,7 +393,7 @@ There are distinct clusters in Scotland, particularly on the outskirts of Glasgo
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=b1&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-This Subgroup has the highest proportion of males among all Subgroups, predominantly skewed towards Boomers (aged 50+). Participants typically gamble on 120 days per annum (32.8% of all days). Betting behaviours are marked by relatively stable daily expenditure, yet individual wagers vary considerably, with individuals typically placing four to five bets per gambling day of differing sizes. Their engagement spans multiple betting activities, reflecting deep-rooted, habitual gambling patterns that are not strictly aligned with major sporting calendars. Geodemographically, they are disproportionately over-represented in neighbourhoods characterised by routine occupations or retirement populations (OAC Group 8a). There are slightly stronger presence in London compared to other Subgroups.
+This Type has the highest proportion of males among all Types, predominantly skewed towards Boomers (aged 50+). Participants typically gamble on 120 days per annum (32.8% of all days). Betting behaviours are marked by relatively stable daily expenditure, yet individual wagers vary considerably, with individuals typically placing four to five bets per gambling day of differing sizes. Their engagement spans multiple betting activities, reflecting deep-rooted, habitual gambling patterns that are not strictly aligned with major sporting calendars. Geodemographically, they are disproportionately over-represented in neighbourhoods characterised by routine occupations or retirement populations (OAC Group 8a). There are slightly stronger presence in London compared to other Types.
 
 #### B2: Well-Resourced Hobbyists {#sec-b2}
 
@@ -427,19 +427,19 @@ These infrequent participants typically engage in short bursts of intense gambli
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=g2&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-This Subgroup has the highest female representation (46.7%) and participants are drawn predominantly from challenged neighbourhoods. Attitudes to risk are typically conservative, manifested in consistent yet cautious engagement with minimal financial exposure through low deposits and stakes. Participants have the lowest gambling--deposit ratios in the Group and make infrequent top-ups to fund gambling days that are fairly or very frequent (121 days per annum). Winnings tend to be recycled. As one of just two Subgroups that experience more winning than losing days, 26.7% of customers accrue profits in a typical month --- the highest percentage in the Group. While participants remain active throughout the year, participation peaks around mid-March. This may be driven by general seasonal promotional campaigns, albeit that participants do not participate in the seasonal betting activities.
+This Type has the highest female representation (46.7%) and participants are drawn predominantly from challenged neighbourhoods. Attitudes to risk are typically conservative, manifested in consistent yet cautious engagement with minimal financial exposure through low deposits and stakes. Participants have the lowest gambling--deposit ratios in the Group and make infrequent top-ups to fund gambling days that are fairly or very frequent (121 days per annum). Winnings tend to be recycled. As one of just two Types that experience more winning than losing days, 26.7% of customers accrue profits in a typical month --- the highest percentage in the Group. While participants remain active throughout the year, participation peaks around mid-March. This may be driven by general seasonal promotional campaigns, albeit that participants do not participate in the seasonal betting activities.
 
 #### G3: High-Stakes Gamers from Deprived Communities {#sec-g3}
 
 [View interactive map (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours?d=11110000&m=g3&lon=-2.288&lat=53.2904&zoom=5.22){target="_blank"}
 
-Members of this Subgroup sustain consistent gaming patterns throughout the year, participating on 129 days per annum (35.3% of all days). This Subgroup has the most heterogeneous gaming behaviour across all intensity metrics, including deposit amounts, wager sizes, session interactions and session durations. Participants' high average number of deposits, averaging 17.4 per month, may suggest limited control over spending. High-stake and volatile gambling behaviours are associated with high monthly losses, with only 11% turning monthly profits. Gaming patterns are highly unpredictable, with no evident temporal trends such as weekend peaks or other popular days. Participants in this Subgroup typically reside in deprived neighbourhoods, though not as markedly as Subgroup G2.
+Members of this Type sustain consistent gaming patterns throughout the year, participating on 129 days per annum (35.3% of all days). This Type has the most heterogeneous gaming behaviour across all intensity metrics, including deposit amounts, wager sizes, session interactions and session durations. Participants' high average number of deposits, averaging 17.4 per month, may suggest limited control over spending. High-stake and volatile gambling behaviours are associated with high monthly losses, with only 11% turning monthly profits. Gaming patterns are highly unpredictable, with no evident temporal trends such as weekend peaks or other popular days. Participants in this Type typically reside in deprived neighbourhoods, though not as markedly as Type G2.
 
 ## Dormant Gamblers {#sec-dormant}
 
 ```{r}
 #| label: fig-treemap-dormant
-#| fig-cap: "Classification treemap highlighting the Dormant Gamblers supergroup."
+#| fig-cap: "Classification treemap highlighting the Dormant Type."
 #| echo: false
 #| message: false
 #| warning: false
@@ -447,15 +447,15 @@ Members of this Subgroup sustain consistent gaming patterns throughout the year,
 make_treemap(highlight = "dormant", height = 380)
 ```
 
-Dormant Gamblers have gambling accounts but have not sustained participation over time. They do not meet the thresholds used to define Active Gamblers, viz. they either gamble less than once per month, engage in only a single betting or gaming session in a year or have a tenure of less than three months. This Supergroup includes individuals who may have experimented with gambling before disengaging, as well as those who participate only occasionally. Their irregular or immature gambling patterns distinguish them from Active Gamblers, who engage more consistently.
+Dormant Gamblers have gambling accounts but have not sustained participation over time. They do not meet the thresholds used to define Active Gamblers, viz. they either gamble less than once per month, engage in only a single betting or gaming session in a year or have a tenure of less than three months. This Type includes individuals who may have experimented with gambling before disengaging, as well as those who participate only occasionally. Their irregular or immature gambling patterns distinguish them from Active Gamblers, who engage more consistently.
 
-Demographically, Dormant Gamblers tend to be slightly younger than Active Gamblers, with a higher proportion of individuals aged under 40. Geographically, their distribution largely mirrors that of Active Gamblers, but with a distinct concentration around Cheltenham, a major hub for Cheltenham Festival, an international horse racing event. Gambling activity is largely confined to mid-March and early April, aligning with the Festival, suggesting that this high-profile event may be a huge pull factor for individuals who would otherwise not gamble. Geodemographically, Dormant Gamblers reside in a diverse range of backgrounds, reflecting broader variability in socio-economic circumstances compared to more defined Active gambling Subgroups.
+Demographically, Dormant Gamblers tend to be slightly younger than Active Gamblers, with a higher proportion of individuals aged under 40. Geographically, their distribution largely mirrors that of Active Gamblers, but with a distinct concentration around Cheltenham, a major hub for Cheltenham Festival, an international horse racing event. Gambling activity is largely confined to mid-March and early April, aligning with the Festival, suggesting that this high-profile event may be a huge pull factor for individuals who would otherwise not gamble. Geodemographically, Dormant Gamblers reside in a diverse range of backgrounds, reflecting broader variability in socio-economic circumstances compared to more defined Active gambling Types.
 
 ## Others {#sec-others}
 
 ```{r}
 #| label: fig-treemap-others
-#| fig-cap: "Classification treemap highlighting the Others supergroup."
+#| fig-cap: "Classification treemap highlighting the Others category."
 #| echo: false
 #| message: false
 #| warning: false
@@ -463,4 +463,4 @@ Demographically, Dormant Gamblers tend to be slightly younger than Active Gamble
 make_treemap(highlight = "others", height = 380)
 ```
 
-Others are individuals with no recorded traces of online gambling. If they hold an account, their gambling behaviour does not meet the criteria for inclusion in the Active or Dormant Gambler Supergroups. Individuals in this Supergroup include: (i) one-off players, who deposited cash once but neither deposited nor played again; and (ii) free-rollers, who participated only with free stakes or wagers without ever making a cash deposit.
+Others are individuals with no recorded traces of online gambling. If they hold an account, their gambling behaviour does not meet the criteria for the Active or Dormant Types. Individuals in this category include: (i) one-off players, who deposited cash once but neither deposited nor played again; and (ii) free-rollers, who participated only with free stakes or wagers without ever making a cash deposit.
