@@ -1,30 +1,34 @@
 ---
-title: "Supplementary Material: Integrative Pen Portraits"
-subtitle: "A 12-Type Classification of Online Gambling Behaviours in Great Britain"
+title: "Supplementary Information"
+subtitle: "Beyond aggregate spending: a behavioural typology of online gambling and its neighbourhood patterning in Great Britain"
 author:
   - name: "Dr. Shunya Kimura"
     email: "s.kimura@liverpool.ac.uk"
   - name: "Prof. Paul Longley"
     email: "p.longley@ucl.ac.uk"
 date: "March 2026"
-date-modified: "2026-04-20"
+date-modified: "2026-05-25"
+prefer-html: true
 format:
   html:
     toc: true
     toc-depth: 3
     css: styles.css
+  docx:
+    toc: true
+    toc-depth: 3
 ---
 
 ## Introduction
 
-This supplementary material accompanies the main paper and provides detailed pen portraits for each of the 12 behavioural Types, plus a residual Others category at the neighbourhood level. The 11 active Types are organised into three activity Groups --- Betting-and-Gaming (BG), Betting-Exclusive (B) and Gaming-Exclusive (G) --- alongside a Dormant Type. Others comprises the remaining adult population and is estimated only at LSOA level. Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Type, facilitating comparison across the classification.
+This supplementary material provides detailed pen portraits for each of the 12 behavioural Types, plus a residual Others category at the neighbourhood level. The 11 Active Types are organised into three activity Groups --- Betting-and-Gaming (BG), Betting-Exclusive (B) and Gaming-Exclusive (G) --- alongside a Dormant Type. Others comprises the remaining adult population and is estimated only at LSOA level. Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Type, facilitating comparison across the classification.
 
 ## Glossary of Terms {#sec-glossary}
 
 The following definitions apply throughout this document:
 
 | Term | Definition |
-|:------------------------|:----------------------------------------------|
+|:-------------------------|:---------------------------------------------|
 | **Genuine Gamblers** | Individuals who hold a verified online account, who participated in at least one form of gambling using money (as opposed to free or demo modes) and made deposits on multiple days within a year. |
 | **Active Gamblers** | Genuine Gamblers who meet the criteria for sustained gambling activity, including gambling at least once a month on average and maintaining an account tenure of over three months. |
 | **Dormant Gamblers** | Genuine Gamblers who do not meet the additional criteria for Active Gamblers. |
@@ -40,7 +44,9 @@ The following definitions apply throughout this document:
 
 @fig-subgroup-tree presents a tree diagram illustrating the two hierarchical levels: activity Groups (BG, B, G) and the 12 Types. The detailed Type profiles entail comparison of gambling behaviour with the other Active Gambler categories and comparison of geodemographic circumstances with both Active and Dormant Gamblers. Interactive maps for each Type are provided via the Geographic Data Service (GeoDS).
 
+::: {.content-visible when-format="html"}
 *Click on any segment in @fig-subgroup-tree to jump to its description.*
+:::
 
 ```{r}
 #| label: setup
@@ -50,6 +56,7 @@ The following definitions apply throughout this document:
 
 library(plotly)
 library(htmlwidgets)
+library(ggplot2)
 
 # --- Shared data for all treemaps ---
 tm_labels <- c(
@@ -269,22 +276,164 @@ make_treemap <- function(highlight = NULL, clickable = FALSE, height = 500) {
 
   p
 }
+
+# Static fallback for Word/PDF output. Plotly/htmlwidgets are HTML-only, so
+# non-HTML formats need an ordinary ggplot figure.
+tm_static_values <- c(
+  100,
+  16.3,
+  8,
+  75.7,
+  8.8,
+  3.4,
+  4.2,
+  1,
+  0.9,
+  1.2,
+  1.8,
+  2.2,
+  1.7,
+  1.3,
+  2.1,
+  1.6,
+  1,
+  1.6
+)
+
+tm_static_layout <- function() {
+  root <- tm_labels[tm_parents == ""]
+  rects <- list()
+
+  layout_children <- function(parent, xmin, xmax, ymin, ymax, depth = 0) {
+    children <- which(tm_parents == parent)
+    if (!length(children)) {
+      return()
+    }
+
+    child_values <- tm_static_values[children]
+    child_total <- sum(child_values)
+    if (child_total <= 0) {
+      return()
+    }
+
+    horizontal <- (xmax - xmin) >= (ymax - ymin)
+    cursor <- if (horizontal) xmin else ymax
+
+    for (i in seq_along(children)) {
+      idx <- children[i]
+      share <- child_values[i] / child_total
+
+      if (horizontal) {
+        next_cursor <- cursor + (xmax - xmin) * share
+        child_rect <- data.frame(
+          label = tm_labels[idx],
+          pct = tm_pct[idx],
+          group = tm_group[idx],
+          xmin = cursor,
+          xmax = next_cursor,
+          ymin = ymin,
+          ymax = ymax,
+          depth = depth + 1
+        )
+        cursor <- next_cursor
+      } else {
+        next_cursor <- cursor - (ymax - ymin) * share
+        child_rect <- data.frame(
+          label = tm_labels[idx],
+          pct = tm_pct[idx],
+          group = tm_group[idx],
+          xmin = xmin,
+          xmax = xmax,
+          ymin = next_cursor,
+          ymax = cursor,
+          depth = depth + 1
+        )
+        cursor <- next_cursor
+      }
+
+      rects[[length(rects) + 1]] <<- child_rect
+      layout_children(
+        tm_labels[idx],
+        child_rect$xmin,
+        child_rect$xmax,
+        child_rect$ymin,
+        child_rect$ymax,
+        depth + 1
+      )
+    }
+  }
+
+  layout_children(root, 0, 100, 0, 60)
+  do.call(rbind, rects)
+}
+
+make_static_treemap <- function(highlight = NULL) {
+  rects <- tm_static_layout()
+
+  rects$fill <- tm_full_colors[match(rects$label, tm_labels)]
+  if (!is.null(highlight)) {
+    keep <- rects$group %in%
+      c(highlight, "root") |
+      (rects$group == "active" & highlight %in% c("bg", "b", "g"))
+    rects$fill <- ifelse(keep, rects$fill, col_dim)
+  }
+
+  rects$text <- paste0(rects$label, "\n", rects$pct)
+  rects$area <- (rects$xmax - rects$xmin) * (rects$ymax - rects$ymin)
+  rects$label_size <- ifelse(rects$area < 140, 2.5, 3.1)
+
+  ggplot(rects) +
+    geom_rect(
+      aes(
+        xmin = xmin,
+        xmax = xmax,
+        ymin = ymin,
+        ymax = ymax,
+        fill = fill
+      ),
+      colour = "white",
+      linewidth = 0.7
+    ) +
+    geom_text(
+      aes(
+        x = (xmin + xmax) / 2,
+        y = (ymin + ymax) / 2,
+        label = text,
+        size = label_size
+      ),
+      lineheight = 0.9,
+      check_overlap = TRUE
+    ) +
+    scale_fill_identity() +
+    scale_size_identity() +
+    coord_equal(expand = FALSE) +
+    theme_void() +
+    theme(plot.margin = margin(4, 4, 4, 4))
+}
+
+render_treemap <- function(highlight = NULL, clickable = FALSE, height = 500) {
+  if (knitr::is_html_output()) {
+    make_treemap(highlight = highlight, clickable = clickable, height = height)
+  } else {
+    make_static_treemap(highlight = highlight)
+  }
+}
 ```
 
 ```{r}
 #| label: fig-subgroup-tree
-#| fig-cap: "Hierarchical representation of the 12 Types, organised by activity Group, alongside the Others residual. Click any segment to navigate to its description."
+#| fig-cap: "Hierarchical representation of the 12 Types, organised by activity Group, alongside the Others residual."
 #| echo: false
 #| message: false
 #| warning: false
 
-make_treemap(clickable = TRUE, height = 520)
+render_treemap(clickable = TRUE, height = 520)
 ```
 
 @tbl-subgroups lists the 11 active Types organised by Group, with links to each pen portrait.
 
 | Group | Code | Type Name |
-|:-----------------|:-----------------|:------------------------------------|
+|:------------------|:------------------|:---------------------------------|
 | Betting & Gaming | BG1 | [Engaged New-Age Gamblers](#sec-bg1) |
 |  | BG2 | [Newcomers with Sporadic and Moderate Patterns of Play](#sec-bg2) |
 |  | BG3 | [Event-Driven Speculative Players](#sec-bg3) |
@@ -310,7 +459,7 @@ make_treemap(clickable = TRUE, height = 520)
 #| message: false
 #| warning: false
 
-make_treemap(highlight = "bg", height = 380)
+render_treemap(highlight = "bg", height = 380)
 ```
 
 Comprising the largest share within the Active Gamblers, Group BG includes individuals who actively participate in both betting and gaming. BG Types display substantial diversity in gambling behaviours: for instance, Types BG4 and BG5 share similar high-frequency play patterns but very different intensities of play and profitability, while BG1 and BG3 have contrasting inclinations towards betting or gaming.
@@ -382,7 +531,7 @@ Geodemographically, participants closely resemble the Active Gambler average but
 #| message: false
 #| warning: false
 
-make_treemap(highlight = "b", height = 380)
+render_treemap(highlight = "b", height = 380)
 ```
 
 This group consists of gamblers who engage exclusively in betting activities. With a median tenure of approximately 3.4 years, they represent the most established customers across the Types. Their demographic profile is predominantly male and includes the oldest participants. While gambling behaviours within the group vary in terms of frequency, intensity and variability, their risk-taking approach remains relatively consistent. Members employ similar betting strategies, balancing a mix of bet slip types with a slight preference for single-fold bets over accumulators. Despite their sustained participation, their overall gambling outcomes are the worst across the groups, with an average of 73.1% of betting days resulting in losses, suggesting that winning may not be their primary motivation. Geodemographically, this Group is the most diverse and shows the weakest association with socio-economic hardship among all Types, reflecting a broad and varied customer base.
@@ -410,7 +559,7 @@ Predominantly male, participants are drawn from the full adult age spectrum. The
 #| message: false
 #| warning: false
 
-make_treemap(highlight = "g", height = 380)
+render_treemap(highlight = "g", height = 380)
 ```
 
 Participants engaging exclusively in gaming activities tend to hold accounts for shorter periods than those in other Groups. The gender balance is even and predominantly under 45, with elderly males noticeably absent. Participation is a year-round activity, with the lower seasonal variations than in other Groups. Participants are predominantly drawn from deprived communities, with few resident in geodemographically salubrious neighbourhoods.
@@ -444,7 +593,7 @@ Members of this Type sustain consistent gaming patterns throughout the year, par
 #| message: false
 #| warning: false
 
-make_treemap(highlight = "dormant", height = 380)
+render_treemap(highlight = "dormant", height = 380)
 ```
 
 Dormant Gamblers have gambling accounts but have not sustained participation over time. They do not meet the thresholds used to define Active Gamblers, viz. they either gamble less than once per month, engage in only a single betting or gaming session in a year or have a tenure of less than three months. This Type includes individuals who may have experimented with gambling before disengaging, as well as those who participate only occasionally. Their irregular or immature gambling patterns distinguish them from Active Gamblers, who engage more consistently.
@@ -460,7 +609,7 @@ Demographically, Dormant Gamblers tend to be slightly younger than Active Gamble
 #| message: false
 #| warning: false
 
-make_treemap(highlight = "others", height = 380)
+render_treemap(highlight = "others", height = 380)
 ```
 
 Others are individuals with no recorded traces of online gambling. If they hold an account, their gambling behaviour does not meet the criteria for the Active or Dormant Types. Individuals in this category include: (i) one-off players, who deposited cash once but neither deposited nor played again; and (ii) free-rollers, who participated only with free stakes or wagers without ever making a cash deposit.
