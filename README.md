@@ -1,20 +1,22 @@
-# Supplementary Material: Integrative Pen Portraits
+# Supplementary Material: Pen Portraits
 
-**A 13-fold Classification of Online Gambling Behaviours in Great Britain**
+**Beyond aggregate spending: a behavioural typology of online gambling and its neighbourhood patterning in Great Britain**
 
 Dr Shunya Kimura | University of Liverpool | s.kimura@liverpool.ac.uk
 
 ## Overview
 
-This repository contains the supplementary material for the accompanying research paper (work in progress, March 2026). It provides detailed pen portraits for each of the 13 Subgroups identified through a hierarchical classification of online gambling behaviour in Great Britain.
+This repository contains the supplementary material for the accompanying research paper (work in progress, March 2026). It provides detailed pen portraits for each of the 12 behavioural Types, plus a residual Others category, identified through a hierarchical classification of online gambling behaviour in Great Britain.
 
-The classification comprises three Supergroups:
+The 11 Active Types are organised into three activity Groups, alongside a Dormant Type and an Others category:
 
-- **Active Gamblers** — Betting & Gaming (BG1–BG6), Betting-Exclusive (B1–B2), Gaming-Exclusive (G1–G3)
-- **Dormant Gamblers**
-- **Others**
+- **Betting-and-Gaming (BG)** — BG1–BG6
+- **Betting-Exclusive (B)** — B1–B2
+- **Gaming-Exclusive (G)** — G1–G3
+- **Dormant**
+- **Others** (estimated only at LSOA level)
 
-Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Subgroup. Interactive treemap figures allow navigation between Subgroups, and links to the [Geographic Data Service (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours) provide interactive maps for each Subgroup.
+Each pen portrait describes the distinctive gambling patterns, demographic composition and neighbourhood associations of a given Type. Interactive treemap figures allow navigation between Types, and links to the [Geographic Data Service (GeoDS)](https://mapmaker.geods.ac.uk/#/gambling-behaviours) provide interactive maps for each Type.
 
 ## Rendering
 
@@ -32,6 +34,7 @@ The output will be generated in the `_output/` directory.
 - R with the following packages:
   - `plotly`
   - `htmlwidgets`
+  - `ggplot2`
 
 ## Repository Structure
 
