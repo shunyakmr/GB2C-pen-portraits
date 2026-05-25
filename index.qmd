@@ -4,6 +4,8 @@ subtitle: "Beyond aggregate spending: a behavioural typology of online gambling 
 author:
   - name: "Dr. Shunya Kimura"
     email: "s.kimura@liverpool.ac.uk"
+  - name: "Dr. Justin van Dijk"
+    email: "j.t.vandijk@ucl.ac.uk"
   - name: "Prof. Paul Longley"
     email: "p.longley@ucl.ac.uk"
 date: "March 2026"
@@ -14,9 +16,6 @@ format:
     toc: true
     toc-depth: 3
     css: styles.css
-  docx:
-    toc: true
-    toc-depth: 3
 ---
 
 ## Introduction
